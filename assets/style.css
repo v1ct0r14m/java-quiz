@@ -11,11 +11,11 @@ body {
 }
 
 body.correct {
-    color: #00c133
+    background-color: #00c133;
 }
 
 body.wrong {
-    color: #c60d0d
+    background-color: #c60d0d;
 }
 
 header {
@@ -31,4 +31,11 @@ header {
     padding: 10%;
     border-radius: 100%;
     align-items: center;
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 2, auto;
+    gap: 12px;
+    margin: 20px 0;
 }
