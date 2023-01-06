@@ -10,37 +10,47 @@
 }
 
 header {
-    display: inline-flex;
+    display: flex;
     border: 10px;
     padding: 10px;
     margin: 0 auto;
     color: aliceblue;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
 }
 
 .timer {
-    display: flex;
+    display: inline-flex;
 }
 
 h2 {
     color: aliceblue;
     padding: 12px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 p {
     color: #f4f4da;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 body {
+    display: flex;
     padding: 0;
     margin: 0;
-    display: flex;
+    display: inline-block;
     justify-content: center;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
     background-color: var(--color-neutral)
 }
+
+/* button colors for correct or wrong answers */
 
 body.correct {
     background-color: var(--color-correct)
@@ -48,10 +58,6 @@ body.correct {
 
 body.wrong {
     background-color: var(--color-wrong)
-}
-
-header {
-    text-align: center;
 }
 
 .container {
@@ -65,6 +71,7 @@ header {
     padding: 10%;
     border-radius: 5px;
     align-items: center;
+    justify-content: center;
 }
 
 .button-grid {
@@ -96,9 +103,12 @@ header {
 }
 
 .start-btn, .next-btn {
+    display: flex;
     font-size: 27px;
     padding: 12px 24px;
     margin: 10px;
+    align-items: center;
+    justify-content: center;
 }
 
 .controls {
