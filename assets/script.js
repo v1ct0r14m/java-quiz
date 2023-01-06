@@ -56,7 +56,6 @@ function resetState() {
 
 
 function selectAnswer() {
-    const
 
 }
 
