@@ -3,19 +3,28 @@
     padding: 0;
 }
 
+:root {
+    --color-neutral: #272770;
+    --color-correct: #12a325;
+    --color-wrong: #cf1515;
+}
+
 body {
+    padding: 0;
+    margin: 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #194bae;
+    background-color: var(--color-neutral)
 }
 
 body.correct {
-    background-color: #00c133;
+    background-color: var(--color-correct)
 }
 
 body.wrong {
-    background-color: #c60d0d;
+    background-color: var(--color-wrong)
 }
 
 header {
@@ -23,19 +32,58 @@ header {
 }
 
 .container {
+    font-size: 30px;
     display: inline-block;
-    background-color: beige;
+    background-color: #f4f4da;
     height: auto;
-    width: 750px;
-    border: 10px;
+    width: 550px;
+    max-width: 80%;
+    border: 1px solid;
     padding: 10%;
-    border-radius: 100%;
+    border-radius: 5px;
     align-items: center;
 }
 
-.btn-grid {
+.button-grid {
     display: grid;
-    grid-template-columns: 2, auto;
+    grid-template-columns: repeat(2, auto);
     gap: 12px;
     margin: 20px 0;
+}
+
+.button {
+    color: white;
+    font-size: 24px;
+    background-color: #7171c2;
+    border: 2px solid #272775;
+    border-radius: 5px;
+    padding: 12px 24px;
+}
+
+.button:hover {
+    background-color: #7b39dd;
+}
+
+.button.correct {
+    background-color: var(--color-correct);
+}
+
+.button.wrong {
+    background-color: var(--color-wrong);
+}
+
+.start-btn, .next-btn {
+    font-size: 27px;
+    padding: 12px 24px;
+    margin: 10px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
 }
