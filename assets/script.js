@@ -1,4 +1,4 @@
-//setting constants for buttons and questions
+//setting constants for buttons, questions, scorecard and leaderboard
 
 const startBtn = document.getElementById('start-button')
 
@@ -10,23 +10,35 @@ const questionElement = document.getElementById('question')
 
 const answerBtnElement = document.getElementById('answer-btn')
 
-let shuffleQuestions, currentQuestionIndex
+const scoreCard = document.getElementById('scores')
+
+const leaderboard = document.getElementById('leaderboard')
+
+var shuffleQuestions, currentQuestion
 
 //adding click events to start and next
 
 startBtn.addEventListener('click', startQuiz)
+
 nextBtn.addEventListener('click', () => {
-    currentQuestionIndex++
+    currentQuestion++
     nextQuestion()
 })
+
+var time
 
 //starting quiz function, enables shuffle of questions so it is different each time
 
 function startQuiz () {
+    
     startBtn.classList.add('hide')
+
     shuffleQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
+
+    currentQuestion = 0
+
     questionContainer.classList.remove('hide')
+
     nextQuestion()
 }
 
@@ -34,7 +46,7 @@ function startQuiz () {
 
 function nextQuestion () {
     resetState()
-    showQuestion(shuffleQuestions[currentQuestionIndex])
+    showQuestion(shuffleQuestions[currentQuestion])
 }
 
 //shows current question
@@ -72,7 +84,7 @@ function selectAnswer(e) {
     Array.from(answerBtnElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    if (shuffleQuestions.length > currentQuestionIndex + 1) {
+    if (shuffleQuestions.length > currentQuestion + 1) {
         nextBtn.classList.remove('hide')
     } else {
         startBtn.innerText = 'restart'
@@ -108,6 +120,16 @@ const questions = [
             {text: 'in the <head> section only', correct: false},
             {text: 'in the <body> section only', correct: false},
             {text: 'in the stylesheet', correct: false}
-        ]
+        ],
+
+        question: 'arrays in JavaScript can be used to store...',
+        answers: [
+            {text: 'booleans', correct: false},
+            {text: 'numbers', correct: false},
+            {text: 'strings', correct: false},
+            {text: 'all of the above', correct: true},
+        ],
     }
 ]
+
+time = questions.length * 10
