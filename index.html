@@ -8,6 +8,7 @@
     <title>quiz app</title>
 </head>
 <body>
+<!--question container-->    
     <div class="container">
         <div id="question-container" class="hide">
          <div id="question">question</div>
@@ -18,10 +19,31 @@
                 <button class="button">answer 4</button>
             </div>
         </div>
+<!--start & next buttons-->
         <div class="controls">
             <button id="start-button" class="start-btn">start</button>
             <button id="next-button" class="next-btn">next</button>
         </div>
+    </div> 
+<!--final score-->
+    <div id="scores" class="card">
+        <h2>way to go, champ!</h2>
+        <p> your final score is... <span id=score></span></p>
+        <form class="inline-form" id="submission-form">
+            <label for="initials"> enter initials: </label>
+            <input type="text" id="initials">
+            <button id="submit-btn" class="button">submit</button>
+        </form>
+    </div>
+<!--leaderboard-->    
+    <div id="leaderboard" class="card">
+        <h2>highscores</h2>
+        <ol id="hs-list">
+        </ol>
+        <div class="lb-btns">
+            <button id="again-btn" class="button">take quiz again</button>
+            <button id="clear-btn" class="button">clear the leaderboard</button>
+        </div>   
     </div>
     <script src="script.js"></script>
 </body>
