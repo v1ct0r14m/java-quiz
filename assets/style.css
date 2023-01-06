@@ -51,14 +51,6 @@ body {
 
 /* button colors for correct or wrong answers */
 
-body.correct {
-    background-color: var(--color-correct)
-}
-
-body.wrong {
-    background-color: var(--color-wrong)
-}
-
 .container {
     font-size: 30px;
     display: flex;
@@ -133,6 +125,16 @@ body.wrong {
     margin: 0
 }
 
+#leaderboard {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#hs-list {
+    align-items: center;
+}
+
 form {
     display: flex;
     align-items: center;
@@ -141,4 +143,10 @@ form {
 
 label {
     color: #f4f4da;
+}
+
+.lb-btns {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }

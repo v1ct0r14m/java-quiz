@@ -41,6 +41,16 @@ function nextQuestion () {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
+    question.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('button')
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click', selectAnswer)
+        answerBtnElement.appendChild(button)
+    })
 }
 
 //resets button and body colors to neutral
@@ -55,8 +65,19 @@ function resetState() {
 
 // answer options to select, setStatus function will indicate whether answer is correct or incorrect
 
-function selectAnswer() {
-
+function selectAnswer(e) {
+    const selectedButton = e.target
+    const correct = selectedButton.dataset.correct
+    setStatusClass(document.body, correct)
+    Array.from(answerBtnElement.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (shuffleQuestions.length > currentQuestionIndex + 1) {
+        nextBtn.classList.remove('hide')
+    } else {
+        startBtn.innerText = 'restart'
+        startBtn.classList.remove('hide')
+    }
 }
 
 //changes colors of answer boxes to indicate whether selected answer is correct or not, and display correct answer nonetheless
