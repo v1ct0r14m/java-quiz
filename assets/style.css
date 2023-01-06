@@ -9,6 +9,29 @@
     --color-wrong: #cf1515;
 }
 
+header {
+    display: inline-flex;
+    border: 10px;
+    padding: 10px;
+    margin: 0 auto;
+    color: aliceblue;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.timer {
+    display: flex;
+}
+
+h2 {
+    color: aliceblue;
+    padding: 12px;
+}
+
+p {
+    color: #f4f4da;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -86,4 +109,8 @@ header {
 
 .hide {
     display: none;
+}
+
+label {
+    color: #f4f4da;
 }
