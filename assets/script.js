@@ -53,7 +53,7 @@ function resetState() {
     }
 }
 
-
+// answer options to select, setStatus function will indicate whether answer is correct or incorrect
 
 function selectAnswer() {
 
