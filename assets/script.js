@@ -32,11 +32,8 @@ var time
 function startQuiz () {
     
     startBtn.classList.add('hide')
-
     shuffleQuestions = questions.sort(() => Math.random() - .5)
-
     currentQuestion = 0
-
     questionContainer.classList.remove('hide')
 
     nextQuestion()
@@ -121,8 +118,8 @@ const questions = [
             {text: 'in the <body> section only', correct: false},
             {text: 'in the stylesheet', correct: false}
         ],
-
-        question: 'arrays in JavaScript can be used to store...',
+    },
+    {    question: 'arrays in JavaScript can be used to store...',
         answers: [
             {text: 'booleans', correct: false},
             {text: 'numbers', correct: false},
