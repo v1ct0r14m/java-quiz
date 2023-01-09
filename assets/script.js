@@ -1,43 +1,61 @@
 //setting constants for buttons, questions, scorecard and leaderboard
-
+const startPage = document.getElementsByClassName('start-page hide')
 const startBtn = document.getElementById('start-button')
-
 const nextBtn = document.getElementById('next-button')
-
 const questionContainer = document.getElementById('question-container')
-
 const questionElement = document.getElementById('question')
-
 const answerBtnElement = document.getElementById('answer-btn')
-
 const scoreCard = document.getElementById('scores')
-
 const leaderboard = document.getElementById('leaderboard')
-
+const time = document.getElementById('timer')
 var shuffleQuestions, currentQuestion
+
+
+
+
+
 
 //adding click events to start and next
 
+
+
 startBtn.addEventListener('click', startQuiz)
+
 
 nextBtn.addEventListener('click', () => {
     currentQuestion++
     nextQuestion()
 })
 
-var time
-
-//starting quiz function, enables shuffle of questions so it is different each time
-
 function startQuiz () {
-    
     startBtn.classList.add('hide')
     shuffleQuestions = questions.sort(() => Math.random() - .5)
     currentQuestion = 0
     questionContainer.classList.remove('hide')
+    time.textContent = 0
 
     nextQuestion()
 }
+
+(function() {
+    var sec = 60;
+    function startTimer(){
+        console.log('timer suppose to go')
+        var timer = setInterval(function(){
+            sec--;
+            document.getElementById('timerDisplay').time='00:'+sec;
+            if (sec < 0) {
+                clearInterval(timer);
+                alert("Time is up!")
+            }
+        }, 1000);
+    }
+    document.getElementById('timer').addEventListener('click', function() {
+        sec -= 5;
+        document.getElementById('timerDisplay').time='00:'+sec;
+    });
+    startTimer();
+})();
 
 //puts buttons and body back into neutral, shows next question
 
@@ -126,7 +144,24 @@ const questions = [
             {text: 'strings', correct: false},
             {text: 'all of the above', correct: true},
         ],
+    },
+    {
+        question: 'string values must be enclosed within ________ when being assigned to variables',
+        answers: [
+            {text: 'commas', correct: false},
+            {text: 'quotes', correct: true},
+            {text: 'curly brackets', correct: false},
+            {text: 'parentheses', correct: false},
+        ],
+    },
+    {
+        question: 'what syntax is used to call a function?',
+        answers: [
+            {text: 'come here function', correct: false},
+            {text: 'var function', correct: false},
+            {text: 'function()', correct: true},
+            {text: 'function', correct: false},
+        ],
     }
 ]
 
-time = questions.length * 10

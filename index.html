@@ -9,11 +9,29 @@
 </head>
 <body>
     <header>
-        <h2 id="view-lb">view leaderboard</h2>
-        <h2 class="timer">time: <span id="timer"></span></h2>
+        <button id="view-lb" class="button" href="#leaderboard/html">view leaderboard</button>
+        <div class="timer">time: <span id="timer"></span></div>
     </header>
 <!--question container-->    
     <div class="container">
+        <!--start page welcome-->
+        <div class="start-page hide">
+            <h2>welcome to my javascript quiz!</h2>
+            <p>
+                you will get 10 points for each correct answer 
+            <br>
+            <br>
+                your score will be displayed at the end
+            <br>
+            <br>
+                feel free to add your initials to the leaderboard,
+                and check out all the leading scores! <br> best of luck!</p>
+        </div>
+        <!-- might remove if nonfunctioning-->
+        <div class="question-count">
+            <!-- <h3>question <span id=number></span>0</span> out of 10</h3> -->
+        </div>
+        <!--question-container-->
         <div id="question-container" class="hide">
          <div id="question">question</div>
             <div id="answer-btn" class="button-grid">
@@ -45,7 +63,7 @@
         <ol id="hs-list">
         </ol>
         <div class="lb-btns">
-            <button id="again-btn" class="button">take quiz again</button>
+            <button id="again-btn" class="button" href="#">take quiz again</button>
             <button id="clear-btn" class="button">clear the leaderboard</button>
         </div>   
     </div>
