@@ -37,25 +37,25 @@ function startQuiz () {
     nextQuestion()
 }
 
-(function() {
+function timer() {
     var sec = 60;
     function startTimer(){
         console.log('timer suppose to go')
         var timer = setInterval(function(){
             sec--;
-            document.getElementById('timerDisplay').time='00:'+sec;
+            document.getElementById('timer').time='00:'+sec;
             if (sec < 0) {
                 clearInterval(timer);
                 alert("Time is up!")
             }
         }, 1000);
     }
-    document.getElementById('timer').addEventListener('click', function() {
+    document.getElementById('incorect').addEventListener('click', function() {
         sec -= 5;
-        document.getElementById('timerDisplay').time='00:'+sec;
+        document.getElementById('timer').time='00:'+sec;
     });
     startTimer();
-})();
+};
 
 //puts buttons and body back into neutral, shows next question
 
