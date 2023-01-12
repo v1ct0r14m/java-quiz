@@ -30,4 +30,4 @@ Stack Overflow Reference for timer: https://stackoverflow.com/questions/58964755
 
 ## Note
 
-any and all feedback is appreciated (needed). really would like some direction with the timer/subtraction of time and leaderboard/how to dynamically change that element
+any and all feedback is appreciated (needed) - really would like some direction with the timer/subtraction of time and leaderboard/how to dynamically change that element
