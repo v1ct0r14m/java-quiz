@@ -32,7 +32,7 @@ function startQuiz () {
     shuffleQuestions = questions.sort(() => Math.random() - .5)
     currentQuestion = 0
     questionContainer.classList.remove('hide')
-    time.textContent = 0
+    //time.textContent = 0
 
     nextQuestion()
 }
@@ -52,7 +52,7 @@ function timer() {
     }
     document.getElementById('incorect').addEventListener('click', function() {
         sec -= 5;
-        document.getElementById('timer').time='00:'+sec;
+        document.getElementById('timerDisplay').time='00:'+sec;
     });
     startTimer();
 };
