@@ -27,3 +27,7 @@ Example images are below:
 Web Dev Simplified: https://youtu.be/riDzcEQbX6k
 
 Stack Overflow Reference for timer: https://stackoverflow.com/questions/58964755/subtract-time-from-timer-if-answer-is-wrong-creating-a-quiz-javascript
+
+## Note
+
+any and all feedback is appreciated (needed). really would like some direction with the timer/subtraction of time and leaderboard/how to dynamically change that element
