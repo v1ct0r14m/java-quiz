@@ -10,17 +10,9 @@ const leaderboard = document.getElementById('leaderboard')
 const time = document.getElementById('timer')
 var shuffleQuestions, currentQuestion
 
-
-
-
-
-
 //adding click events to start and next
 
-
-
 startBtn.addEventListener('click', startQuiz)
-
 
 nextBtn.addEventListener('click', () => {
     currentQuestion++
@@ -37,25 +29,25 @@ function startQuiz () {
     nextQuestion()
 }
 
-function timer() {
-    var sec = 60;
-    function startTimer(){
-        console.log('timer suppose to go')
-        var timer = setInterval(function(){
-            sec--;
-            document.getElementById('timer').time='00:'+sec;
-            if (sec < 0) {
-                clearInterval(timer);
-                alert("Time is up!")
-            }
-        }, 1000);
-    }
-    document.getElementById('incorect').addEventListener('click', function() {
-        sec -= 5;
-        document.getElementById('timerDisplay').time='00:'+sec;
-    });
-    startTimer();
-};
+// function timer() {
+//     var sec = 60;
+//     function startTimer(){
+//         console.log('timer suppose to go')
+//         var timer = setInterval(function(){
+//             sec--;
+//             document.getElementById('timer').time='00:'+sec;
+//             if (sec < 0) {
+//                 clearInterval(timer);
+//                 alert("Time is up!")
+//             }
+//         }, 1000);
+//     }
+//     document.getElementById('incorect').addEventListener('click', function() {
+//         sec -= 5;
+//         document.getElementById('timerDisplay').time='00:'+sec;
+//     });
+//     startTimer();
+//};
 
 //puts buttons and body back into neutral, shows next question
 
@@ -82,30 +74,30 @@ function showQuestion(question) {
 
 //resets button and body colors to neutral
 
-function resetState() {
-    clearStatusClass(document.body)
-    nextBtn.classList.add('hide')
-    while (answerBtnElement.firstChild) {
-        answerBtnElement.removeChild(answerBtnElement.firstChild)
-    }
-}
+// function resetState() {
+//     clearStatusClass(document.body)
+//     nextBtn.classList.add('hide')
+//     while (answerBtnElement.firstChild) {
+//         answerBtnElement.removeChild(answerBtnElement.firstChild)
+//     }
+// }
 
 // answer options to select, setStatus function will indicate whether answer is correct or incorrect
 
-function selectAnswer(e) {
-    const selectedButton = e.target
-    const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
-    Array.from(answerBtnElement.children).forEach(button => {
-        setStatusClass(button, button.dataset.correct)
-    })
-    if (shuffleQuestions.length > currentQuestion + 1) {
-        nextBtn.classList.remove('hide')
-    } else {
-        startBtn.innerText = 'restart'
-        startBtn.classList.remove('hide')
-    }
-}
+// function selectAnswer(e) {
+//     const selectedButton = e.target
+//     const correct = selectedButton.dataset.correct
+//     setStatusClass(document.body, correct)
+//     Array.from(answerBtnElement.children).forEach(button => {
+//         setStatusClass(button, button.dataset.correct)
+//     })
+//     if (shuffleQuestions.length > currentQuestion + 1) {
+//         nextBtn.classList.remove('hide')
+//     } else {
+//         startBtn.innerText = 'restart'
+//         startBtn.classList.remove('hide')
+//     }
+// }
 
 //changes colors of answer boxes to indicate whether selected answer is correct or not, and display correct answer nonetheless
 
