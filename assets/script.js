@@ -1,5 +1,5 @@
 //setting constants for buttons, questions, scorecard and leaderboard
-const startPage = document.getElementsByClassName('start-page hide')
+const startPage = document.getElementsByClassName('start-page')
 const startBtn = document.getElementById('start-button')
 const nextBtn = document.getElementById('next-button')
 const questionContainer = document.getElementById('question-container')
@@ -7,12 +7,13 @@ const questionElement = document.getElementById('question')
 const answerBtn = document.getElementById('answer-btn')
 const scoreCard = document.getElementById('scores')
 const leaderboard = document.getElementById('leaderboard')
-var timer = document.getElementById('timer')
+var timer = document.querySelector('.timer')
 var shuffleQuestions, currentQuestion
 
 //adding click events to start and next
 
 timer.innerText = 00
+var timerCount
 
 startBtn.addEventListener('click', startQuiz)
 
@@ -40,7 +41,9 @@ var setTime = function () {
 const checkTime = setInterval(function () {
     timer.innerText = timerCount
     timerCount--
-}) 
+    },
+    1000
+) 
 
 //puts buttons and body back into neutral, shows next question
 function nextQuestion () {
