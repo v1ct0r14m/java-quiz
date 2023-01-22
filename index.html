@@ -15,7 +15,7 @@
 <!--question container-->    
     <div class="container">
         <!--start page welcome-->
-        <div class="start-page hide">
+        <div class="start-page" class="hide">
             <h2>welcome to my javascript quiz!</h2>
             <p>
                 you will get 10 points for each correct answer 
@@ -48,14 +48,16 @@
         </div>
     </div> 
 <!--final score-->
-    <div id="scores" class="card">
+    <div id="quiz-over" class="hide">
         <h2>way to go, champ!</h2>
+    <div id="scores" class="card">
         <p> your final score is... <span id=score></span></p>
         <form class="inline-form" id="submission-form">
-            <label for="initials"> enter initials: </label>
-            <input type="text" id="initials">
-            <button id="submit-btn" class="button">submit</button>
-        </form>
+                <label for="initials"> enter initials: </label>
+                <input type="text" id="initials">
+                <button id="submit-btn" class="button">submit</button>
+            </form>
+        </div>
     </div>
 <!--leaderboard-->    
     <div id="leaderboard" class="card">

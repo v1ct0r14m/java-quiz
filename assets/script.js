@@ -7,7 +7,7 @@ const questionElement = document.getElementById('question')
 const answerBtnElement = document.getElementById('answer-btn')
 const scoreCard = document.getElementById('scores')
 const leaderboard = document.getElementById('leaderboard')
-const time = document.getElementById('timer')
+var timer = document.getElementById('timer')
 var shuffleQuestions, currentQuestion
 
 //adding click events to start and next
@@ -72,15 +72,18 @@ function showQuestion(question) {
     })
 }
 
+
+
+
 //resets button and body colors to neutral
 
-// function resetState() {
-//     clearStatusClass(document.body)
-//     nextBtn.classList.add('hide')
-//     while (answerBtnElement.firstChild) {
-//         answerBtnElement.removeChild(answerBtnElement.firstChild)
-//     }
-// }
+function resetQuiz() {
+    clear(document.body)
+    nextBtn.classList.add('hide')
+    while (answerBtnElement.firstChild) {
+        answerBtnElement.removeChild(answerBtnElement.firstChild)
+    }
+}
 
 // answer options to select, setStatus function will indicate whether answer is correct or incorrect
 
@@ -101,8 +104,8 @@ function showQuestion(question) {
 
 //changes colors of answer boxes to indicate whether selected answer is correct or not, and display correct answer nonetheless
 
-function setStatusClass(element, correct) {
-    clearStatusClass(element)
+function resetQuiz(element, correct) {
+    clear(element)
     if (correct) {
         element.classList.add('correct')
     } else {
@@ -112,7 +115,7 @@ function setStatusClass(element, correct) {
 
 //removes colored answers to reset the board for next question
 
-function clearStatusClass(element) {
+function clear(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
