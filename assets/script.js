@@ -12,6 +12,8 @@ var shuffleQuestions, currentQuestion
 
 //adding click events to start and next
 
+timer.innerText = 00
+
 startBtn.addEventListener('click', startQuiz)
 
 nextBtn.addEventListener('click', () => {
@@ -24,30 +26,11 @@ function startQuiz () {
     shuffleQuestions = questions.sort(() => Math.random() - .5)
     currentQuestion = 0
     questionContainer.classList.remove('hide')
-    //time.textContent = 0
 
     nextQuestion()
 }
 
-// function timer() {
-//     var sec = 60;
-//     function startTimer(){
-//         console.log('timer suppose to go')
-//         var timer = setInterval(function(){
-//             sec--;
-//             document.getElementById('timer').time='00:'+sec;
-//             if (sec < 0) {
-//                 clearInterval(timer);
-//                 alert("Time is up!")
-//             }
-//         }, 1000);
-//     }
-//     document.getElementById('incorect').addEventListener('click', function() {
-//         sec -= 5;
-//         document.getElementById('timerDisplay').time='00:'+sec;
-//     });
-//     startTimer();
-//};
+
 
 //puts buttons and body back into neutral, shows next question
 
