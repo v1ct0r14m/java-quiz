@@ -4,7 +4,7 @@ const startBtn = document.getElementById('start-button')
 const nextBtn = document.getElementById('next-button')
 const questionContainer = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
-const answerBtnElement = document.getElementById('answer-btn')
+const answerBtn = document.getElementById('answer-btn')
 const scoreCard = document.getElementById('scores')
 const leaderboard = document.getElementById('leaderboard')
 var timer = document.getElementById('timer')
@@ -22,6 +22,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 function startQuiz () {
+    startPage.classList.add('hide')
     startBtn.classList.add('hide')
     shuffleQuestions = questions.sort(() => Math.random() - .5)
     currentQuestion = 0
@@ -30,7 +31,14 @@ function startQuiz () {
     nextQuestion()
 }
 
+var setTime = function () {
+    timerCount = 30
+}
 
+const checkTime = setInterval(function () {
+    timer.innerText = timerCount
+    timerCount--
+}) 
 
 //puts buttons and body back into neutral, shows next question
 
@@ -51,42 +59,24 @@ function showQuestion(question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener('click', selectAnswer)
-        answerBtnElement.appendChild(button)
+        answerBtn.appendChild(button)
     })
 }
 
-
-
-
 //resets button and body colors to neutral
-
 function resetQuiz() {
     clear(document.body)
     nextBtn.classList.add('hide')
-    while (answerBtnElement.firstChild) {
-        answerBtnElement.removeChild(answerBtnElement.firstChild)
+    while (answerBtn.firstChild) {
+        answerBtn.removeChild(answerBtn.firstChild)
     }
 }
 
-// answer options to select, setStatus function will indicate whether answer is correct or incorrect
+// selects answers for quiz
 
-// function selectAnswer(e) {
-//     const selectedButton = e.target
-//     const correct = selectedButton.dataset.correct
-//     setStatusClass(document.body, correct)
-//     Array.from(answerBtnElement.children).forEach(button => {
-//         setStatusClass(button, button.dataset.correct)
-//     })
-//     if (shuffleQuestions.length > currentQuestion + 1) {
-//         nextBtn.classList.remove('hide')
-//     } else {
-//         startBtn.innerText = 'restart'
-//         startBtn.classList.remove('hide')
-//     }
-// }
 
-//changes colors of answer boxes to indicate whether selected answer is correct or not, and display correct answer nonetheless
 
+// answer options to select, function will indicate whether answer is correct or incorrect
 function resetQuiz(element, correct) {
     clear(element)
     if (correct) {
