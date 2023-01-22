@@ -31,6 +31,8 @@ function startQuiz () {
     nextQuestion()
 }
 
+
+//timer
 var setTime = function () {
     timerCount = 30
 }
@@ -41,14 +43,12 @@ const checkTime = setInterval(function () {
 }) 
 
 //puts buttons and body back into neutral, shows next question
-
 function nextQuestion () {
     resetState()
     showQuestion(shuffleQuestions[currentQuestion])
 }
 
 //shows current question
-
 function showQuestion(question) {
     questionElement.innerText = question.question
     question.answers.forEach(answer => {
@@ -87,14 +87,12 @@ function resetQuiz(element, correct) {
 }
 
 //removes colored answers to reset the board for next question
-
 function clear(element) {
     element.classList.remove('correct')
     element.classList.remove('wrong')
 }
 
-//question for quiz!
-
+//question for quiz! proto
 const questions = [
     {
         question: 'where is the correct place to insert a JavaScript?',
